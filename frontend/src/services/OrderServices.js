@@ -1,46 +1,83 @@
 import axios from 'axios';
 
+const API_BASE_URL = 'http://localhost:4000/orders';
+
 export const getAllOrders = async () => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/orders`);
-    return data;
+    try {
+        const { data } = await axios.get(API_BASE_URL);
+        return data;
+    } catch (error) {
+        console.error('Error fetching all orders:', error);
+        throw error;
+    }
 };
 
 export const getOrderById = async (id) => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/orders/${id}`);
-    return data;
+    try {
+        const { data } = await axios.get(`${API_BASE_URL}/${id}`);
+        return data;
+    } catch (error) {
+        console.error(`Error fetching order with ID ${id}:`, error);
+        throw error;
+    }
 };
 
 export const getOrdersByStatus = async (status) => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/orders/status/${status}`);
-    return data;
+    try {
+        const { data } = await axios.get(`${API_BASE_URL}/status/${status}`);
+        return data;
+    } catch (error) {
+        console.error(`Error fetching orders by status ${status}:`, error);
+        throw error;
+    }
 };
 
 export const getOrdersByUserId = async (id) => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/orders/user/${id}`);
-    return data;
+    try {
+        const { data } = await axios.get(`${API_BASE_URL}/user/${id}`);
+        return data;
+    } catch (error) {
+        console.error(`Error fetching orders for user with ID ${id}:`, error);
+        throw error;
+    }
 };
 
 export const addOrder = async (products, buyer, address) => {
-    const { data } = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/orders`, {
-        products,
-        buyer,
-        address
-    });
-    return data;
+    try {
+        const { data } = await axios.post(API_BASE_URL, {
+            products,
+            buyer,
+            address
+        });
+        return data;
+    } catch (error) {
+        console.error('Error adding an order:', error);
+        throw error;
+    }
 };
 
 export const updateOrderStatus = async (id, status, prepare, onWay, delivered, cancel) => {
-    const { data } = await axios.put(`${process.env.REACT_APP_API_BASE_URL}/orders/${id}`, {
-        status,
-        prepare,
-        onWay,
-        delivered,
-        cancel
-    });
-    return data;
+    try {
+        const { data } = await axios.put(`${API_BASE_URL}/${id}`, {
+            status,
+            prepare,
+            onWay,
+            delivered,
+            cancel
+        });
+        return data;
+    } catch (error) {
+        console.error(`Error updating order with ID ${id}:`, error);
+        throw error;
+    }
 };
 
 export const deleteOrder = async (id) => {
-    const { data } = await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/orders/${id}`);
-    return data;
+    try {
+        const { data } = await axios.delete(`${API_BASE_URL}/${id}`);
+        return data;
+    } catch (error) {
+        console.error(`Error deleting order with ID ${id}:`, error);
+        throw error;
+    }
 };

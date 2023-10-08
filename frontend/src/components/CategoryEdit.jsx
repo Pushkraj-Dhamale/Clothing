@@ -106,7 +106,7 @@ const CategoryEdit = ({ isEdit }) => {
     if (isEdit) {
         return (
             <Box p={3} my={5} display='flex' flexDirection='column' minWidth='280px' width='25%'>
-                <Text fontSize={26} color='facebook.500'>Category</Text>
+                <Text fontSize={26} color='#273E47.500'>Category</Text>
                 <Select mt={5} placeholder='Select Genre' onChange={(e) => setSelectedGenre(e.target.value)} >
                     {
                         allGenres.length > 0 && allGenres.map((genre) => {
@@ -126,14 +126,14 @@ const CategoryEdit = ({ isEdit }) => {
                     <option value={true}>True</option>
                     <option value={false}>False</option>
                 </Select>
-                <Button colorScheme='facebook' onClick={onClickEdit} >Edit</Button>
-                <Button color='facebook.500' variant='text' _hover={{ textDecoration: 'underline' }} onClick={onClickDelete} >Delete</Button>
+                <Button color='#273E47' onClick={onClickEdit} >Edit</Button>
+                <Button color='#273E47.500' variant='text' _hover={{ textDecoration: 'underline' }} onClick={onClickDelete} >Delete</Button>
             </Box>
         )
     } else {
         return (
             <Box p={3} my={5} display='flex' flexDirection='column' minWidth='280px' width='25%'>
-                <Text fontSize={26} color='facebook.500'>Category</Text>
+                <Text fontSize={26} color='#273E47.500'>Category</Text>
                 <Select mt={5} placeholder='Select Genre' onChange={(e) => setSelectedGenre(e.target.value)} >
                     {
                         allGenres.length > 0 && allGenres.map((genre) => {
@@ -146,7 +146,7 @@ const CategoryEdit = ({ isEdit }) => {
                     <option value={true}>True</option>
                     <option value={false}>False</option>
                 </Select>
-                <Button colorScheme='facebook' onClick={onClickAdd} >Add</Button>
+                <Button color='#273E47' onClick={onClickAdd} >Add</Button>
             </Box>
         )
     }

@@ -169,7 +169,7 @@ const Product = () => {
                   name='rating' />
                 <Text fontSize={16} fontWeight={500} > | {ratingCount} reviews</Text>
               </Box>
-              <Text mt={5} mb={3} fontSize={28} fontWeight={400} color='facebook.500' >Price : <b> {product.price}$ </b> </Text>
+              <Text mt={5} mb={3} fontSize={28} fontWeight={400} color='#273E47.500' >Price : <b> {product.price} ₹ </b> </Text>
               <Divider />
               <Text mt={3} fontSize={20} fontWeight={500} >Sizes</Text>
               <Box mt={3} display='flex' >
@@ -179,7 +179,7 @@ const Product = () => {
                       key={index}
                       onClick={() => setSelectedSize(size)}
                       me={3}
-                      colorScheme='facebook'
+                      color='#273E47'
                       variant={selectedSize === size ? 'solid' : 'outline'}
                       width={{ base: '25px', sm: '35px', lg: '50px' }}
                       height={{ base: '30px', sm: '40px', lg: '50px' }}
@@ -196,9 +196,9 @@ const Product = () => {
                   inCart
                     ?
                     <Box display='flex' alignItems='center' width={{ base: '100%', sm: '40%' }} >
-                      <Button onClick={onClickRemoveCart} disabled={amount === 0} colorScheme='facebook'>-</Button>
+                      <Button onClick={onClickRemoveCart} disabled={amount === 0} color='#273E47'>-</Button>
                       <Text fontSize={25} px={2} width={{ base: '100%', sm: '60%' }} textAlign='center' >{amount}</Text>
-                      <Button onClick={onClickAddCart} colorScheme='facebook' >+</Button>
+                      <Button onClick={onClickAddCart} color='#273E47' >+</Button>
                     </Box>
                     :
                     <Button
@@ -206,7 +206,7 @@ const Product = () => {
                       my={1}
                       me={{ base: 0, md: 2 }}
                       maxWidth={530}
-                      colorScheme='facebook'
+                      color='#273E47'
                       height={10}
                       width='100%'
                     >ADD TO CART</Button>
@@ -215,7 +215,7 @@ const Product = () => {
                   icon={isFavorite ? <Favorite /> : <FavoriteBorder />}
                   onClick={onClickFavorite}
                   ml={1} my={1}
-                  colorScheme='facebook'
+                  color='#273E47'
                   variant='outline'
                   height={10}
                   width='50px'
@@ -223,7 +223,7 @@ const Product = () => {
                   display={{ base: 'none', sm: 'block' }} />
                 <Button
                   my={1}
-                  colorScheme='facebook'
+                  color='#273E47'
                   variant='outline'
                   display={{ base: 'block', sm: 'none' }}
                   height={10}
@@ -266,7 +266,7 @@ const Product = () => {
               </Box>
               <Text my={3} display='flex' alignItems='center' ><Info sx={{ fontSize: '16px', mr: 1 }} /> You must have purchased the product for write a review.  </Text>
             </Box>
-            <Button ml={2} mr={{ base: 0, md: 5 }} height={50} colorScheme='facebook' onClick={onClickWrite} >
+            <Button ml={2} mr={{ base: 0, md: 5 }} height={50} color='#273E47' onClick={onClickWrite} >
               Write a Review
             </Button>
           </Box>

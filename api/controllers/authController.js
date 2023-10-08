@@ -5,10 +5,11 @@ exports.Register = async (req, res) => {
     try {
         const newUser = await User.create(req.body);
 
-        res.status(201).json({
+        res.status(200).json({
             newUser
         });
     } catch (error) {
+        console.log(error.message)
         res.status(400).json({
             status: 'failed',
             error

@@ -1,32 +1,59 @@
 import axios from 'axios';
 
+const API_BASE_URL = 'http://localhost:4000/genres';
+
 export const getAllGenres = async () => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/genres`);
-    return data;
+    try {
+        const { data } = await axios.get(API_BASE_URL);
+        return data;
+    } catch (error) {
+        console.error('Error fetching all genres:', error);
+        throw error;
+    }
 };
 
 export const getGenreById = async (id) => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/genres/${id}`);
-    return data;
+    try {
+        const { data } = await axios.get(`${API_BASE_URL}/${id}`);
+        return data;
+    } catch (error) {
+        console.error(`Error fetching genre with ID ${id}:`, error);
+        throw error;
+    }
 };
 
 export const addGenre = async (name, status) => {
-    const { data } = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/genres`, {
-        name,
-        status
-    });
-    return data;
+    try {
+        const { data } = await axios.post(API_BASE_URL, {
+            name,
+            status
+        });
+        return data;
+    } catch (error) {
+        console.error('Error adding a genre:', error);
+        throw error;
+    }
 };
 
 export const updateGenre = async (id, name, status) => {
-    const { data } = await axios.put(`${process.env.REACT_APP_API_BASE_URL}/genres/${id}`, {
-        name,
-        status
-    });
-    return data;
+    try {
+        const { data } = await axios.put(`${API_BASE_URL}/${id}`, {
+            name,
+            status
+        });
+        return data;
+    } catch (error) {
+        console.error(`Error updating genre with ID ${id}:`, error);
+        throw error;
+    }
 };
 
 export const deleteGenre = async (id) => {
-    const { data } = await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/genres/${id}`);
-    return data;
+    try {
+        const { data } = await axios.delete(`${API_BASE_URL}/${id}`);
+        return data;
+    } catch (error) {
+        console.error(`Error deleting genre with ID ${id}:`, error);
+        throw error;
+    }
 };

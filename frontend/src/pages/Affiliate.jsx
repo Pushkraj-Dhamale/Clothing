@@ -6,12 +6,12 @@ import { Favorite, RateReview, ShoppingCart } from '@mui/icons-material';
 
 import { useCartContext } from '../contexts/CartContext';
 import { useUserContext } from '../contexts/UserContext';
-import { getProductById } from '../services/ProductServices';
+import { getProduct } from '../services/ProductServices';
 import { addFavorite, deleteFavorite } from '../services/UserServices';
 import useGetFavoriteStatus from '../hooks/useGetFavoriteStatus';
-import ReviewModal from './ReviewModal';
+// import ReviewModal from './ReviewModal';
 
-const ClothesCard = ({ productId, isDelivered }) => {
+const Affiliate = ({ productId, isDelivered }) => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [cookies, setCookies, removeCookie] = useCookies(['cart']);
@@ -28,7 +28,7 @@ const ClothesCard = ({ productId, isDelivered }) => {
   useEffect(() => {
     if (productId) {
       setIsFavorite(status);
-      getProductById(productId)
+      getProduct()
         .then(result => {
           setProduct(result.product);
         });
@@ -176,9 +176,9 @@ const ClothesCard = ({ productId, isDelivered }) => {
           </Box>
         </Box>
       </Box>
-      <ReviewModal isOpen={isOpen} onClose={onClose} productId={productId} />
+      {/* <ReviewModal isOpen={isOpen} onClose={onClose} productId={productId} /> */}
     </>
   )
 }
 
-export default ClothesCard;
+export default Affiliate;

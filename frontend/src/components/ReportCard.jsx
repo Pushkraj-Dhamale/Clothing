@@ -54,7 +54,7 @@ const ReportCard = ({reportId, orderId, userId, content, createdAt, setRefresh, 
             <Divider  />
                 <Text mx={3} my={3} fontSize={18}>{content}</Text>
                 <Box float='right' mt={3} >
-                <Button colorScheme='facebook' px={5} onClick={onClickFixed} >Solved</Button>
+                <Button color='#273E47' px={5} onClick={onClickFixed} >Solved</Button>
                 </Box>
 
         </Box>

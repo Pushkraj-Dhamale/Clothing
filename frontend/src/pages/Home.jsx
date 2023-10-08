@@ -30,7 +30,7 @@ const Home = () => {
       <Box display='flex' justifyContent='center' >
         <Carousel />
       </Box>
-      <Box bg='facebook.500' mt={{ base: 5, md: 0 }} >
+      <Box bg='#273E47' mt={{ base: 5, md: 0 }} >
         <Container maxWidth={1200} display='flex' justifyContent='space-between' alignItems='center' flexDirection={{ base: 'column', md: 'row' }} py={7}>
           <Box color='#fff' alignItems='center' display='flex' flexDirection='column' >
             <AccountBalanceWallet sx={{ fontSize: 50 }} color='inherit' />
@@ -42,7 +42,7 @@ const Home = () => {
           </Box>
           <Box color='#fff' alignItems='center' display='flex' flexDirection='column' mt={{ base: 5, md: 0 }} >
             <WorkspacePremium sx={{ fontSize: 50 }} color='inherit' />
-            <Text mt={3} fontSize={20} fontWeight={600} color='inherit' >Clothify Quality Assurance</Text>
+            <Text mt={3} fontSize={20} fontWeight={600} color='inherit' >TrendWave Quality Assurance</Text>
           </Box>
         </Container>
       </Box>
@@ -56,10 +56,10 @@ const Home = () => {
           miniImages.length === 0 &&
           <>
             <Box my={20} display='flex' justifyContent='center' width='100%'>
-              <CircularProgress isIndeterminate color='facebook.500' />
+              <CircularProgress isIndeterminate color='#273E47.500' />
             </Box>
             <Box my={20} display='flex' justifyContent='center' width='100%'>
-              <CircularProgress isIndeterminate color='facebook.500' />
+              <CircularProgress isIndeterminate color='#273E47.500' />
             </Box>
           </>
         }

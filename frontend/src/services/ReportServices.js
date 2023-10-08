@@ -1,40 +1,72 @@
 import axios from 'axios';
 
+const API_BASE_URL = 'http://localhost:4000/reports';
+
 export const getAllReports = async () => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/reports`);
-    return data;
+    try {
+        const { data } = await axios.get(API_BASE_URL);
+        return data;
+    } catch (error) {
+        console.error('Error fetching all reports:', error);
+        throw error;
+    }
 };
 
 export const getReportById = async (id) => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/reports/${id}`);
-    return data;
+    try {
+        const { data } = await axios.get(`${API_BASE_URL}/${id}`);
+        return data;
+    } catch (error) {
+        console.error(`Error fetching report with ID ${id}:`, error);
+        throw error;
+    }
 };
 
 export const getReportByUserId = async (id) => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/reports/user/${id}`);
-    return data;
+    try {
+        const { data } = await axios.get(`${API_BASE_URL}/user/${id}`);
+        return data;
+    } catch (error) {
+        console.error(`Error fetching reports for user with ID ${id}:`, error);
+        throw error;
+    }
 };
 
 export const addReport = async (orderId, userId, content) => {
-    const { data } = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/reports`, {
-        orderId,
-        userId,
-        content
-    });
-    return data;
+    try {
+        const { data } = await axios.post(API_BASE_URL, {
+            orderId,
+            userId,
+            content
+        });
+        return data;
+    } catch (error) {
+        console.error('Error adding a report:', error);
+        throw error;
+    }
 };
 
 export const updateReport = async ({ id, orderId, userId, content, status }) => {
-    const { data } = await axios.put(`${process.env.REACT_APP_API_BASE_URL}/reports/${id}`, {
-        orderId,
-        userId,
-        content,
-        status
-    });
-    return data;
+    try {
+        const { data } = await axios.put(`${API_BASE_URL}/${id}`, {
+            orderId,
+            userId,
+            content,
+            status
+        });
+        return data;
+    } catch (error) {
+        console.error(`Error updating report with ID ${id}:`, error);
+        throw error;
+    }
 };
 
 export const deleteReport = async (id) => {
-    const { data } = await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/reports/${id}`);
-    return data;
+    try {
+        const { data } = await axios.delete(`${API_BASE_URL}/${id}`);
+        return data;
+    } catch (error) {
+        console.error(`Error deleting report with ID ${id}:`, error);
+        throw error;
+    }
 };

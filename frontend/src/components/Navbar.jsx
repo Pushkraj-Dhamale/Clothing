@@ -71,23 +71,23 @@ const Navbar = () => {
           <Text
             fontSize={40}
             fontWeight={700}
-            color={'facebook.500'}
+            color={'#273E47.500'}
             letterSpacing={-2}
             cursor='pointer'
             onClick={() => navigate('/')}
-          >CLOTHIFY</Text>
+          >TRENDWAVE</Text>
           <Hamburger base='flex' sm='none' md='none' />
         </Box>
         <Searchbar />
         <Box display={{ base: 'none', md: 'flex' }} alignItems='center' px={2} >
           <Box
-            color='facebook.500'
+            color='#273E47.500'
             display='flex'
             flexDirection='column'
             cursor='pointer'
             alignItems='center'
             transition={.5}
-            _hover={{ color: 'facebook.700' }}
+            _hover={{ color: '#273E47.700' }}
             onMouseEnter={() => setOpen(true)}
             onMouseLeave={() => setOpen(false)}
             onClick={() => !currentUser && navigate('/login')}
@@ -136,27 +136,27 @@ const Navbar = () => {
             }
           </Box>
           <Box
-            color='facebook.500'
+            color='#273E47.500'
             display='flex'
             flexDirection='column'
             cursor='pointer'
             mx='5'
             alignItems='center'
             transition={.5}
-            _hover={{ color: 'facebook.700' }}
+            _hover={{ color: '#273E47.700' }}
             onClick={() => navigate('/favorites')}
           >
             <Icon fontSize={30} color='inherit' as={Favorite} />
             <Text color='inherit' fontWeight={500} >Favorites</Text>
           </Box>
           <Box
-            color='facebook.500'
+            color='#273E47.500'
             display='flex'
             flexDirection='column'
             cursor='pointer'
             alignItems='center'
             transition={.5}
-            _hover={{ color: 'facebook.700' }}
+            _hover={{ color: '#273E47.700' }}
             onClick={() => navigate('/cart')}
           >
             <Icon fontSize={30} color='inherit' as={ShoppingCart} />

@@ -31,7 +31,7 @@ const Hamburger = ({ base, sm, md }) => {
             <Menu >
                 <MenuButton
                     as={IconButton}
-                    color='facebook.500'
+                    color='#273E47.500'
                     fontSize={40}
                     icon={<MenuIcon fontSize='40px' />}
                     variant='ghost'

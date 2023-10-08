@@ -1,44 +1,81 @@
 import axios from 'axios';
 
+const API_BASE_URL = 'http://localhost:4000/ratings';
+
 export const getAllRatings = async () => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/ratings`);
-    return data
+    try {
+        const { data } = await axios.get(API_BASE_URL);
+        return data;
+    } catch (error) {
+        console.error('Error fetching all ratings:', error);
+        throw error;
+    }
 };
 
 export const getRatingById = async (id) => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/ratings/${id}`);
-    return data;
+    try {
+        const { data } = await axios.get(`${API_BASE_URL}/${id}`);
+        return data;
+    } catch (error) {
+        console.error(`Error fetching rating with ID ${id}:`, error);
+        throw error;
+    }
 };
 
 export const getRatingByOwnerId = async (ownerId) => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/ratings/owner/${ownerId}`);
-    return data;
+    try {
+        const { data } = await axios.get(`${API_BASE_URL}/owner/${ownerId}`);
+        return data;
+    } catch (error) {
+        console.error(`Error fetching ratings for owner with ID ${ownerId}:`, error);
+        throw error;
+    }
 };
 
 export const getRatingByProductId = async (productId) => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/ratings/product/${productId}`);
-    return data;
-}
+    try {
+        const { data } = await axios.get(`${API_BASE_URL}/product/${productId}`);
+        return data;
+    } catch (error) {
+        console.error(`Error fetching ratings for product with ID ${productId}:`, error);
+        throw error;
+    }
+};
 
 export const addRating = async (product, rating, owner) => {
-    const { data } = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/ratings`, {
-        for: product,
-        rating,
-        owner
-    });
-    return data;
+    try {
+        const { data } = await axios.post(API_BASE_URL, {
+            for: product,
+            rating,
+            owner
+        });
+        return data;
+    } catch (error) {
+        console.error('Error adding a rating:', error);
+        throw error;
+    }
 };
 
 export const updateRating = async (id, product, rating, owner) => {
-    const { data } = await axios.put(`${process.env.REACT_APP_API_BASE_URL}/ratings/${id}`, {
-        for: product,
-        rating,
-        owner
-    });
-    return data;
+    try {
+        const { data } = await axios.put(`${API_BASE_URL}/${id}`, {
+            for: product,
+            rating,
+            owner
+        });
+        return data;
+    } catch (error) {
+        console.error(`Error updating rating with ID ${id}:`, error);
+        throw error;
+    }
 };
 
 export const deleteRating = async (id) => {
-    const { data } = await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/ratings/${id}`);
-    return data;
+    try {
+        const { data } = await axios.delete(`${API_BASE_URL}/${id}`);
+        return data;
+    } catch (error) {
+        console.error(`Error deleting rating with ID ${id}:`, error);
+        throw error;
+    }
 };

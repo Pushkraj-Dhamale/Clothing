@@ -68,7 +68,7 @@ const ProductsforAdmin = () => {
                 <Th>Color</Th>
                 <Th>Gender</Th>
                 <Th>Price</Th>
-                <Th><Button colorScheme='facebook' onClick={onClickAdd} >Add New</Button></Th>
+                <Th><Button color='#273E47' onClick={onClickAdd} >Add New</Button></Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -83,8 +83,8 @@ const ProductsforAdmin = () => {
                       <Td>{product.gender}</Td>
                       <Td>{product.price} $</Td>
                       <Td>
-                        <Button onClick={() => onClickEdit(product._id)} colorScheme='facebook'><Edit /></Button>
-                        <Button onClick={() => onClickDelete(product._id)} bg='whitesmoke' color='facebook.500'><Delete /></Button>
+                        <Button onClick={() => onClickEdit(product._id)} color='#273E47'><Edit /></Button>
+                        <Button onClick={() => onClickDelete(product._id)} bg='whitesmoke' color='#273E47.500'><Delete /></Button>
                       </Td>
                     </Tr>
                   )
@@ -99,7 +99,7 @@ const ProductsforAdmin = () => {
   } else {
     return (
       <Box alignItems='center' display='flex' justifyContent='center' width='100%' minHeight='40vh' >
-        <CircularProgress isIndeterminate color='facebook.500' />
+        <CircularProgress isIndeterminate color='#273E47.500' />
       </Box>
     )
   }

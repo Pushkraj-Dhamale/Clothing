@@ -76,19 +76,19 @@ const ImagesforAdmin = () => {
   return (
     <Box>
       <Box display='flex' justifyContent='space-between' my={5} px={6} >
-        <Text fontSize={30} fontWeight={500} color='facebook.500'>Admin Image Panel</Text>
-        <Button colorScheme='facebook' onClick={onOpen} >Add Image</Button>
+        <Text fontSize={30} fontWeight={500} color='#273E47.500'>Admin Image Panel</Text>
+        <Button color='#273E47' onClick={onOpen} >Add Image</Button>
       </Box>
       <Divider></Divider>
       <Box my={5} p={3}>
-        <Text fontSize={24} fontWeight={500} ml={3} color='facebook.500'> Carousel Images</Text>
+        <Text fontSize={24} fontWeight={500} ml={3} color='#273E47.500'> Carousel Images</Text>
         <Box display='flex' flexWrap='wrap' >
           {
             carouselImages.length > 0 && carouselImages.map((image) => {
               return (
                 <Box key={image._id} minWidth={260} maxWidth={500} mx={{ base: 0, sm: 2, md: 3 }} my={3} >
                   <Image src={image.url} width='100%' height='auto' />
-                  <Button onClick={() => onClickDeleteCarouselImage(image._id)} colorScheme='facebook' width='100%'>Delete</Button>
+                  <Button onClick={() => onClickDeleteCarouselImage(image._id)} color='#273E47' width='100%'>Delete</Button>
                 </Box>
               )
             })
@@ -96,19 +96,19 @@ const ImagesforAdmin = () => {
           {
             carouselImages.length === 0
             &&
-            <Text fontSize={24} fontWeight={500} ml={3} color='facebook.500' my={10} >There are no carousel images here.</Text>
+            <Text fontSize={24} fontWeight={500} ml={3} color='#273E47.500' my={10} >There are no carousel images here.</Text>
           }
         </Box>
       </Box>
       <Box my={5} p={3}>
-        <Text fontSize={24} fontWeight={500} ml={3} color='facebook.500'> Mini Images</Text>
+        <Text fontSize={24} fontWeight={500} ml={3} color='#273E47.500'> Mini Images</Text>
         <Box display='flex' flexWrap='wrap' >
           {
             miniImages.length > 0 && miniImages.map((image) => {
               return (
                 <Box key={image._id} width={260} mx={{ base: 0, sm: 2, md: 3 }} my={3} >
                   <Image src={image.url} width='100%' height='auto' />
-                  <Button onClick={() => onClickDeleteMiniImage(image._id)} colorScheme='facebook' width='100%'>Delete</Button>
+                  <Button onClick={() => onClickDeleteMiniImage(image._id)} color='#273E47' width='100%'>Delete</Button>
                 </Box>
               )
             })
@@ -116,7 +116,7 @@ const ImagesforAdmin = () => {
           {
             miniImages.length === 0
             &&
-            <Text fontSize={24} fontWeight={500} ml={3} color='facebook.500' my={10} >There are no mini images here.</Text>
+            <Text fontSize={24} fontWeight={500} ml={3} color='#273E47.500' my={10} >There are no mini images here.</Text>
           }
         </Box>
       </Box>

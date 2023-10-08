@@ -143,10 +143,10 @@ const ReviewModal = ({ onClose, isOpen, productId }) => {
         <Modal onClose={onClose} isOpen={isOpen} isCentered>
             <ModalOverlay />
             <ModalContent>
-                <ModalHeader fontSize={30} color='facebook.500' >{ratingId !== "" ? 'Edit Review' : 'Review'}</ModalHeader>
+                <ModalHeader fontSize={30} color='#273E47.500' >{ratingId !== "" ? 'Edit Review' : 'Review'}</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    <Text fontSize={20} mt={5} mb={3} fontWeight={400} color='facebook.500' >Rating :</Text>
+                    <Text fontSize={20} mt={5} mb={3} fontWeight={400} color='#273E47.500' >Rating :</Text>
                     <StarRatings
                         starDimension={'30'}
                         starSpacing={'2'}
@@ -156,7 +156,7 @@ const ReviewModal = ({ onClose, isOpen, productId }) => {
                         starRatedColor="#FFD700"
                         numberOfStars={5}
                         name='rating' />
-                    <Text fontSize={20} mt={5} fontWeight={400} color='facebook.500' >Review Text :</Text>
+                    <Text fontSize={20} mt={5} fontWeight={400} color='#273E47.500' >Review Text :</Text>
                     <Textarea
                         maxLength={200}
                         spellCheck={false}
@@ -173,13 +173,13 @@ const ReviewModal = ({ onClose, isOpen, productId }) => {
                         ratingId !== ""
                             ?
                             <>
-                                <Button mx={3} px={7} colorScheme='facebook' onClick={onClickEdit}>Edit</Button>
-                                <Button colorScheme='facebook' variant='outline' onClick={onClickDelete}>Delete</Button>
+                                <Button mx={3} px={7} color='#273E47' onClick={onClickEdit}>Edit</Button>
+                                <Button color='#273E47' variant='outline' onClick={onClickDelete}>Delete</Button>
                             </>
                             :
                             <>
-                                <Button mx={3} px={7} colorScheme='facebook' onClick={onClickSend}>Send</Button>
-                                <Button colorScheme='facebook' variant='outline' onClick={onClose}>Cancel</Button>
+                                <Button mx={3} px={7} color='#273E47' onClick={onClickSend}>Send</Button>
+                                <Button color='#273E47' variant='outline' onClick={onClose}>Cancel</Button>
                             </>
                     }
                 </ModalFooter>

@@ -84,15 +84,15 @@ const Cart = () => {
         <Box my={5} borderLeft={{ base: 'none', md: '2px solid whitesmoke' }} flexDirection='column' display='flex' bg='#fff' width={{ base: '100%', md: '20%' }} px={5} >
         {
           userAddress && <Box my={3} flexDirection='column' display='flex' bg='#fff' width={{ base: '100%' }}  >
-            <Text fontSize={28} mt={3} fontWeight={600} color='facebook.500' >Address</Text>
-            <Text mt={3} fontSize={24} color='facebook.500' fontWeight={300} >{userAddress}</Text>
+            <Text fontSize={28} mt={3} fontWeight={600} color='#273E47.500' >Address</Text>
+            <Text mt={3} fontSize={24} color='#273E47.500' fontWeight={300} >{userAddress}</Text>
           </Box>
         }
-          <Text fontSize={28} mt={10} fontWeight={600} color='facebook.500' >Order Details</Text>
-          <Text mt={3} fontSize={24} color='facebook.500' fontWeight={300} >Product Amount: {totalAmount}</Text>
-          <Text mt={3} fontSize={24} color='facebook.500' fontWeight={300} >Total Price: {totalPrice} $</Text>
-          <Button mt={10} colorScheme='facebook' onClick={onClickPurchase} >Purchase</Button>
-          <Button mt={3} variant='text' color='facebook.500' onClick={onClickRemove} >Remove All</Button>
+          <Text fontSize={28} mt={10} fontWeight={600} color='#273E47.500' >Order Details</Text>
+          <Text mt={3} fontSize={24} color='#273E47.500' fontWeight={300} >Product Amount: {totalAmount}</Text>
+          <Text mt={3} fontSize={24} color='#273E47.500' fontWeight={300} >Total Price: {totalPrice} ₹</Text>
+          <Button mt={10} color='#273E47' onClick={onClickPurchase} >Purchase</Button>
+          <Button mt={3} variant='text' color='#273E47.500' onClick={onClickRemove} >Remove All</Button>
 
         </Box>
       </Box>
@@ -114,7 +114,7 @@ const Cart = () => {
           variant='solid'
           fontSize={20}
           px={10} mt={10}
-          colorScheme='facebook'
+          color='#273E47'
           onClick={() => navigate('/')}>
           Start Shopping
         </Button>

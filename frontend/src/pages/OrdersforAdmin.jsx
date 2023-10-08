@@ -75,7 +75,7 @@ const OrdersforAdmin = () => {
   } else {
     return (
       <Box alignItems='center' display='flex' justifyContent='center' width='100%' minHeight='40vh' >
-        <CircularProgress isIndeterminate color='facebook.500' />
+        <CircularProgress isIndeterminate color='#273E47.500' />
       </Box>
     )
   }

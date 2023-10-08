@@ -37,7 +37,7 @@ const Orders = () => {
           textAlign='center'
           fontSize={30}
           fontWeight={currentOrders === "active" ? 600 : 300}
-          color='facebook.500'
+          color='#273E47.500'
           mr={5}
           cursor='pointer'
           onClick={() => setCurrentOrders("active")}
@@ -46,7 +46,7 @@ const Orders = () => {
           textAlign='center'
           fontSize={30}
           fontWeight={currentOrders === "active" ? 300 : 600}
-          color='facebook.500'
+          color='#273E47.500'
           ml={5}
           cursor='pointer'
           onClick={() => setCurrentOrders("all")}
@@ -77,7 +77,7 @@ const Orders = () => {
                 variant='solid'
                 fontSize={20}
                 px={10} mt={10}
-                colorScheme='facebook'
+                color='#273E47'
                 onClick={() => navigate('/')}>
                 Start Shopping
               </Button>
@@ -100,7 +100,7 @@ const Orders = () => {
               variant='solid'
               fontSize={20}
               px={10} mt={10}
-              colorScheme='facebook'
+              color='#273E47'
               onClick={() => navigate('/')}>
               Start Shopping
             </Button>

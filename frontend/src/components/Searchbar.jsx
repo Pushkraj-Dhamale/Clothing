@@ -34,7 +34,7 @@ const Searchbar = () => {
                         onInput={handleInput}
                     />
                     <InputRightElement width='4rem'>
-                        <Button h='1.75rem' size='sm' variant='solid' colorScheme='facebook' onClick={handleSubmit} >
+                        <Button h='1.75rem' size='sm' variant='solid' color='#273E47' onClick={handleSubmit} >
                             <Search />
                         </Button>
                     </InputRightElement>

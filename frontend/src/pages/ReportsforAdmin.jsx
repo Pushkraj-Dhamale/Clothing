@@ -19,7 +19,7 @@ const ReportsforAdmin = () => {
 
   return (
     <Box px={{ base: 3, md: 5 }} py={10} display='flex' width='100%' flexDirection='column'>
-      <Text fontSize='32' my={5} fontWeight={600} color='facebook.500' textAlign='center' >Reports</Text>
+      <Text fontSize='32' my={5} fontWeight={600} color='#273E47.500' textAlign='center' >Reports</Text>
       <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={3} >
         {
           reports.length>0 && reports.map((report) => {

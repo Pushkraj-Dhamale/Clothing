@@ -50,7 +50,7 @@ const Carousel = () => {
       width={{ base: '100vw', md: '1200px' }}
       overflow={'hidden'}>
       <IconButton
-        colorScheme="facebook"
+        color="#000000"
         borderRadius="full"
         position="absolute"
         left={side}
@@ -63,7 +63,7 @@ const Carousel = () => {
       </IconButton>
       <IconButton
         aria-label="right-arrow"
-        colorScheme="facebook"
+        color="#000000"
         borderRadius="full"
         position="absolute"
         right={side}

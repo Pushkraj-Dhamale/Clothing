@@ -33,7 +33,7 @@ const Dropdown = ({ title, genreId }) => {
                     onMouseLeave={onClose}
                     borderBottom='3px solid white'
                     transition={.5}
-                    _hover={{color:'facebook.500',borderBottom:'3px solid #385898'}}
+                    _hover={{color:'#273E47.500',borderBottom:'3px solid #385898'}}
                 >{title}</MenuButton>
                 <MenuList
                 onMouseEnter={onOpen}

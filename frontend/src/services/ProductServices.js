@@ -1,88 +1,150 @@
 import axios from 'axios';
 
+const API_BASE_URL = 'http://localhost:4000/products';
+
 export const getAllProducts = async () => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/products`);
-    return data;
+    try {
+        const { data } = await axios.get(API_BASE_URL);
+        return data;
+    } catch (error) {
+        console.error('Error fetching all products:', error);
+        throw error;
+    }
 };
 
 export const getProductById = async (id) => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/products/${id}`);
-    return data;
+    try {
+        const { data } = await axios.get(`${API_BASE_URL}/${id}`);
+        return data;
+    } catch (error) {
+        console.error(`Error fetching product with ID ${id}:`, error);
+        throw error;
+    }
 };
 
 export const getProductByPrice = async (lowest, uppest) => {
-    const { data } = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/products/query/price`, {
-        lowest,
-        uppest
-    });
-    return data;
+    try {
+        const { data } = await axios.post(`${API_BASE_URL}/query/price`, {
+            lowest,
+            uppest
+        });
+        return data;
+    } catch (error) {
+        console.error('Error fetching products by price:', error);
+        throw error;
+    }
 };
 
 export const getProductByCategoryId = async (id) => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/products/category/${id}`);
-    return data;
+    try {
+        const { data } = await axios.get(`${API_BASE_URL}/category/${id}`);
+        return data;
+    } catch (error) {
+        console.error(`Error fetching products by category ID ${id}:`, error);
+        throw error;
+    }
 };
 
 export const getProductByColor = async (color, lowest, uppest) => {
-    const { data } = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/products/color/${color}`, {
-        lowest,
-        uppest
-    });
-    return data;
+    try {
+        const { data } = await axios.post(`${API_BASE_URL}/color/${color}`, {
+            lowest,
+            uppest
+        });
+        return data;
+    } catch (error) {
+        console.error(`Error fetching products by color ${color}:`, error);
+        throw error;
+    }
 };
 
 export const getProductByGender = async (gender, lowest, uppest) => {
-    const { data } = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/products/gender/${gender}`, {
-        lowest,
-        uppest
-    });
-    return data;
+    try {
+        const { data } = await axios.post(`${API_BASE_URL}/gender/${gender}`, {
+            lowest,
+            uppest
+        });
+        return data;
+    } catch (error) {
+        console.error(`Error fetching products by gender ${gender}:`, error);
+        throw error;
+    }
 };
 
 export const getProductByStatus = async (status) => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/products/status/${status}`);
-    return data;
+    try {
+        const { data } = await axios.get(`${API_BASE_URL}/status/${status}`);
+        return data;
+    } catch (error) {
+        console.error(`Error fetching products by status ${status}:`, error);
+        throw error;
+    }
 };
 
 export const getProductBySearch = async (search) => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/products/search/${search}`);
-    return data;
+    try {
+        const { data } = await axios.get(`${API_BASE_URL}/search/${search}`);
+        return data;
+    } catch (error) {
+        console.error(`Error fetching products by search query ${search}:`, error);
+        throw error;
+    }
 };
 
 export const getProductsByQueries = async (lowest, uppest, gender, color) => {
-    const { data } = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/products/query/full`, {
-        lowest,
-        uppest,
-        gender,
-        color
-    });
-    return data;
+    try {
+        const { data } = await axios.post(`${API_BASE_URL}/query/full`, {
+            lowest,
+            uppest,
+            gender,
+            color
+        });
+        return data;
+    } catch (error) {
+        console.error('Error fetching products by queries:', error);
+        throw error;
+    }
 };
 
-export const addProduct = async (imageUrl,name, color, sizes, description, category, gender, price) => {
-    const { data } = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/products`, {
-        imageUrl,
-        name,
-        color,
-        sizes,
-        description,
-        category,
-        gender,
-        price
-    });
-    return data;
+export const addProduct = async (imageUrl, name, color, sizes, description, category, gender, price) => {
+    try {
+        const { data } = await axios.post(API_BASE_URL, {
+            imageUrl,
+            name,
+            color,
+            sizes,
+            description,
+            category,
+            gender,
+            price
+        });
+        return data;
+    } catch (error) {
+        console.error('Error adding a product:', error);
+        throw error;
+    }
 };
 
 export const updateProduct = async (id, name, description, price) => {
-    const { data } = await axios.put(`${process.env.REACT_APP_API_BASE_URL}/products/${id}`, {
-        name,
-        description,
-        price
-    });
-    return data;
+    try {
+        const { data } = await axios.put(`${API_BASE_URL}/${id}`, {
+            name,
+            description,
+            price
+        });
+        return data;
+    } catch (error) {
+        console.error(`Error updating product with ID ${id}:`, error);
+        throw error;
+    }
 };
 
 export const deleteProduct = async (id) => {
-    const { data } = await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/products/${id}`);
-    return data;
+    try {
+        const { data } = await axios.delete(`${API_BASE_URL}/${id}`);
+        return data;
+    } catch (error) {
+        console.error(`Error deleting product with ID ${id}:`, error);
+        throw error;
+    }
 };

@@ -114,7 +114,7 @@ const ProductEditModal = ({ isOpen, onClose, isEdit, currentId }) => {
             <Modal isOpen={isOpen} onClose={onClose} >
                 <ModalOverlay />
                 <ModalContent>
-                    <ModalHeader color='facebook.500' >Edit Product</ModalHeader>
+                    <ModalHeader color='#273E47.500' >Edit Product</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
                         <Text fontSize={18} fontWeight={300} >ID : {currentId}</Text>
@@ -123,8 +123,8 @@ const ProductEditModal = ({ isOpen, onClose, isEdit, currentId }) => {
                         <Input mt={3} placeholder='Price' type='number' onInput={(e) => setPrice(e.target.value)} value={price} />
                     </ModalBody>
                     <ModalFooter>
-                        <Button colorScheme='facebook' onClick={onClickSave} >Save</Button>
-                        <Button colorScheme='facebook' variant='ghost' ml={3} onClick={onClose}>
+                        <Button color='#273E47' onClick={onClickSave} >Save</Button>
+                        <Button color='#273E47' variant='ghost' ml={3} onClick={onClose}>
                             Close
                         </Button>
                     </ModalFooter>
@@ -136,7 +136,7 @@ const ProductEditModal = ({ isOpen, onClose, isEdit, currentId }) => {
             <Modal isOpen={isOpen} onClose={onClose} >
                 <ModalOverlay />
                 <ModalContent>
-                    <ModalHeader color='facebook.500' >New Product</ModalHeader>
+                    <ModalHeader color='#273E47.500' >New Product</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
                         <Input type='file' p={0} border='none' onChange={chooseImage} />
@@ -171,8 +171,8 @@ const ProductEditModal = ({ isOpen, onClose, isEdit, currentId }) => {
                         <Input mt={3} placeholder='Price' type='number' name='price' onChange={handleChange} value={values.price} />
                     </ModalBody>
                     <ModalFooter>
-                        <Button colorScheme='facebook' onClick={handleSubmit} disabled={!isValid && imageUrl === ""} >Add</Button>
-                        <Button colorScheme='facebook' variant='ghost' ml={3} onClick={onClose}>Close</Button>
+                        <Button color='#273E47' onClick={handleSubmit} disabled={!isValid && imageUrl === ""} >Add</Button>
+                        <Button color='#273E47' variant='ghost' ml={3} onClick={onClose}>Close</Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal>

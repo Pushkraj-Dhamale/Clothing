@@ -78,15 +78,15 @@ const OrderCard = ({ orderId }) => {
         <>
             <Box bg='whitesmoke' my={5} p={3} >
                 <Box display='flex' justifyContent='space-around' flexDirection={{ base: 'column', sm: 'row' }} >
-                    <Text fontSize={20} p={2} fontWeight={400} color='facebook.500' >Order Id : {orderId}</Text>
-                    <Text fontSize={20} p={2} fontWeight={400} color='facebook.500' >Status : {orderStatus}</Text>
-                    <Text fontSize={20} p={2} fontWeight={400} color='facebook.500' >Order Date : {moment(date).format('DD.MM.YY - hh:mm A')}</Text>
+                    <Text fontSize={20} p={2} fontWeight={400} color='#273E47.500' >Order Id : {orderId}</Text>
+                    <Text fontSize={20} p={2} fontWeight={400} color='#273E47.500' >Status : {orderStatus}</Text>
+                    <Text fontSize={20} p={2} fontWeight={400} color='#273E47.500' >Order Date : {moment(date).format('DD.MM.YY - hh:mm A')}</Text>
                     {
                         orderStatus === "Order has been delivered."
                             ?
-                            <Button onClick={onOpen} my={2} colorScheme='facebook' >Report Order <Error sx={{ ml: 2 }} /></Button>
+                            <Button onClick={onOpen} my={2} color='#273E47' >Report Order <Error sx={{ ml: 2 }} /></Button>
                             :
-                            orderStatus !== "Order canceled." && <Button onClick={onClickCancel} my={2} colorScheme='facebook' >Cancel Order<Cancel sx={{ ml: 2 }} /></Button>
+                            orderStatus !== "Order canceled." && <Button onClick={onClickCancel} my={2} color='#273E47' >Cancel Order<Cancel sx={{ ml: 2 }} /></Button>
                     }
                 </Box>
                 <Divider />

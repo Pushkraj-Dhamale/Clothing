@@ -69,7 +69,7 @@ const AddImageModal = ({ isOpen, onClose, refresh, setRefresh }) => {
         <Modal onClose={onClose} isOpen={isOpen} isCentered>
             <ModalOverlay />
             <ModalContent>
-                <ModalHeader fontSize={30} color='facebook.500' >Add Image</ModalHeader>
+                <ModalHeader fontSize={30} color='#273E47.500' >Add Image</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
                     <Select onChange={(e) => setCategory(e.target.value)} value={category} >
@@ -79,8 +79,8 @@ const AddImageModal = ({ isOpen, onClose, refresh, setRefresh }) => {
                     <Input border='none' p={0} mt={3} type='file' onChange={onChooseImage} />
                 </ModalBody>
                 <ModalFooter>
-                    <Button mx={3} px={7} colorScheme='facebook' onClick={onClickAdd} >Add</Button>
-                    <Button colorScheme='facebook' variant='outline' onClick={onClose}>Cancel</Button>
+                    <Button mx={3} px={7} color='#273E47' onClick={onClickAdd} >Add</Button>
+                    <Button color='#273E47' variant='outline' onClick={onClose}>Cancel</Button>
                 </ModalFooter>
             </ModalContent>
         </Modal>

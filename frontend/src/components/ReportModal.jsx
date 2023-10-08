@@ -38,10 +38,10 @@ const ReportModal = ({ onClose, isOpen, orderId }) => {
         <Modal onClose={onClose} isOpen={isOpen} isCentered>
             <ModalOverlay />
             <ModalContent>
-                <ModalHeader fontSize={30} color='facebook.500' >Report Order </ModalHeader>
+                <ModalHeader fontSize={30} color='#273E47.500' >Report Order </ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    <Text fontSize={20} my={3} fontWeight={400} color='facebook.500' >Order Id : {orderId}</Text>
+                    <Text fontSize={20} my={3} fontWeight={400} color='#273E47.500' >Order Id : {orderId}</Text>
                     <Textarea
                         spellCheck={false}
                         mt={5}
@@ -53,8 +53,8 @@ const ReportModal = ({ onClose, isOpen, orderId }) => {
                     ></Textarea>
                 </ModalBody>
                 <ModalFooter>
-                    <Button mx={3} px={7} colorScheme='facebook' onClick={handleClick}>Send</Button>
-                    <Button colorScheme='facebook' variant='outline' onClick={onClose}>Cancel</Button>
+                    <Button mx={3} px={7} color='#273E47' onClick={handleClick}>Send</Button>
+                    <Button color='#273E47' variant='outline' onClick={onClose}>Cancel</Button>
                 </ModalFooter>
             </ModalContent>
         </Modal>

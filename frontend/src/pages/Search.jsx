@@ -59,8 +59,8 @@ const Search = () => {
         display='flex'
         justifyContent='space-between'
         py={5} >
-        <Button colorScheme='facebook' variant='outline' backgroundColor='#fff' onClick={() => setOpenFilter(!openFilter)} >{openFilter ? 'Hide' : 'Show'} Filter</Button>
-        <Select colorScheme='facebook' onChange={handleChange} value={sortBy} backgroundColor='#fff' width='170px' >
+        <Button color='#273E47' variant='outline' backgroundColor='#fff' onClick={() => setOpenFilter(!openFilter)} >{openFilter ? 'Hide' : 'Show'} Filter</Button>
+        <Select color='#273E47' onChange={handleChange} value={sortBy} backgroundColor='#fff' width='170px' >
           <option value='recommended'>Best Sellers</option>
           <option value='lowest'>Lowest Price</option>
           <option value='highest'>Highest Price</option>
@@ -91,7 +91,7 @@ const Search = () => {
                 variant='solid'
                 fontSize={20}
                 px={10} mt={10}
-                colorScheme='facebook'
+                color='#273E47'
                 onClick={() => navigate('/')}>
                 Start Shopping
               </Button>

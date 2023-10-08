@@ -29,7 +29,7 @@ const Register = () => {
             if (result.data.newUser) {
               navigate('/login');
               toast({
-                title: 'Welcome to CLOTHIFY!',
+                title: 'Welcome to TRENDWAVE!',
                 description: 'You have successfully registered.',
                 status: 'success',
                 duration: 2000,
@@ -69,7 +69,7 @@ const Register = () => {
       mt={5}
     >
       <Box width={{ base: '100vw', sm: '500px' }} p={2}>
-        <Text textAlign='center' color={'facebook.500'} fontSize={32} fontWeight={600} mb={10} >Register</Text>
+        <Text textAlign='center' color={'#273E47.500'} fontSize={32} fontWeight={600} mb={10} >Register</Text>
         <Box display='flex' flexDirection={{ base: 'column', sm: 'row' }}>
           <FormControl mt={3} width={{ base: '100%', sm: '50%' }} me={{ base: 0, sm: 2 }} isInvalid={touched.firstName && errors.firstName} >
             <FormLabel fontSize={20} >First Name</FormLabel>
@@ -140,10 +140,10 @@ const Register = () => {
           {touched.password && <FormErrorMessage>{errors.password}</FormErrorMessage>}
         </FormControl>
         <Checkbox name='terms' isChecked={values.terms} onChange={handleChange} mt={5} >I agree the <strong>Terms of Service</strong> and <strong>Privacy Policy</strong>.</Checkbox>
-        <Button mt={5} width='100%' variant='solid' colorScheme='facebook' disabled={!isValid} onClick={handleSubmit} >Register</Button>
+        <Button mt={5} width='100%' variant='solid' color='#273E47' disabled={!isValid} onClick={handleSubmit} >Register</Button>
         <br />
         <Text my={3} width='100%' textAlign='center' >or</Text>
-        <Button width='100%' variant='outline' colorScheme='facebook' onClick={() => navigate('/login')} >Login</Button>
+        <Button width='100%' variant='outline' color='#273E47' onClick={() => navigate('/login')} >Login</Button>
       </Box>
     </Box>
   )

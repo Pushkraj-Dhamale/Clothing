@@ -14,7 +14,7 @@ const CategoriesforAdmin = () => {
           textAlign='center'
           fontSize={30}
           fontWeight={currentMode === "add" ? 600 : 300}
-          color='facebook.500'
+          color='#273E47.500'
           mr={5}
           cursor='pointer'
           onClick={() => setCurrentMode("add")}
@@ -23,7 +23,7 @@ const CategoriesforAdmin = () => {
           textAlign='center'
           fontSize={30}
           fontWeight={currentMode === "add" ? 300 : 600}
-          color='facebook.500'
+          color='#273E47.500'
           ml={5}
           cursor='pointer'
           onClick={() => setCurrentMode("edit")}

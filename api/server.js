@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const dotenv = require('dotenv').config();
-const stripe = require("stripe")(process.env.STRIPE_API_KEY);
+const dotenv = require('dotenv').config({ path: 'ENV_FILENAME' });
+const stripe = require("stripe")('sk_test_51NxPlVSC9F991Uibai3IH1tJRkshsaw2Wif0e0YHqFvqJe0L9Zzs28mbtVJnMJclmfMBVMgVl91VPpfdja9IzMdl00rV4x6Pte');
 
 const categoryRoutes = require('./routes/categoryRoutes');
 const productRoutes = require('./routes/productRoutes');
@@ -22,6 +22,9 @@ const port = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use(express.json());
+app.get("/try", (a, b) => {
+    b.send("hy")
+})
 
 // ROUTES
 app.use('/users', userRoutes);
@@ -34,7 +37,7 @@ app.use('/orders', orderRoutes);
 app.use('/reports', reportRoutes);
 app.use('/images', imageRoutes);
 app.use('/minis', miniImageRoutes);
-
+app.use('/affiliate', affiliate);
 
 // STRIPE CONNECTION
 app.post("/create-payment-intent", async (req, res) => {
@@ -53,7 +56,38 @@ app.post("/create-payment-intent", async (req, res) => {
     });
 });
 
-mongoose.connect(process.env.MONGODB_URL, () => {
+app.post("/create-checkout", async (req, res) => {
+    const { product } = req.body;
+    try {
+        const session = await stripe.checkout.sessions.create({
+            payment_method_types: ["card"],
+            line_items: [
+                {
+                    price_data: {
+                        currency: "inr",
+                        product_data: {
+                            name: product.name,
+                        },
+                        unit_amount: product.price * 100,
+                    },
+                    quantity: product.quantity,
+                },
+            ],
+            mode: "payment",
+            success_url: "http://localhost:3000/cart",
+            cancel_url: "http://localhost:3000/login",
+        });
+        res.json({ id: session.id }); 
+    }
+    catch (error) {
+        console.log(error.message)
+    }
+
+    // res.json({ id: session.id }); 
+    // console.log(req.body)
+});
+
+mongoose.connect("mongodb://127.0.0.1:27017/project", () => {
     console.log('Successfully connected to database.');
 });
 

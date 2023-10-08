@@ -65,7 +65,7 @@ const Login = () => {
       height='75vh'
     >
       <Box width={{ base: '100vw', sm: '500px' }} p={2}>
-        <Text textAlign='center' color={'facebook.500'} fontSize={32} fontWeight={600} mb={10} >Login</Text>
+        <Text textAlign='center' color={'#273E47.500'} fontSize={32} fontWeight={600} mb={10} >Login</Text>
         <FormControl mt={3} >
           <FormLabel fontSize={20} >Email</FormLabel>
           <Input
@@ -94,10 +94,10 @@ const Login = () => {
           </InputGroup>
         </FormControl>
         <Checkbox value={remember} onChange={() => setRemember(!remember)} mt={5} >Remember me</Checkbox>
-        <Button mt={5} width='100%' variant='solid' colorScheme='facebook' disabled={!isValid} onClick={handleSubmit} >Login</Button>
+        <Button mt={5} width='100%' variant='solid' color='#273E47' disabled={!isValid} onClick={handleSubmit} >Login</Button>
         <br />
         <Text my={3} width='100%' textAlign='center' >or</Text>
-        <Button width='100%' variant='outline' colorScheme='facebook' onClick={() => navigate('/register')} >Register</Button>
+        <Button width='100%' variant='outline' color='#273E47' onClick={() => navigate('/register')} >Register</Button>
       </Box>
     </Box>
   )

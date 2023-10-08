@@ -117,7 +117,7 @@ const ClothesCard = ({ productId, isDelivered }) => {
         />
         <Box px={3} py={5} bg='#fff' position='relative' width='100%' height={230} maxWidth={500} >
           <Text onClick={() => navigate(`/product/${product._id}`, { state: { "productId": product._id } })} fontWeight={500} fontSize={26} >{product.name}</Text>
-          <Text onClick={() => navigate(`/product/${product._id}`, { state: { "productId": product._id } })} mb={10} fontSize={18} >{product.description}</Text>
+          {/* <Text onClick={() => navigate(`/product/${product._id}`, { state: { "productId": product._id } })} mb={10} fontSize={18} >{product.description}</Text> */}
           <Box
             mt={5}
             py={3}
@@ -129,15 +129,15 @@ const ClothesCard = ({ productId, isDelivered }) => {
             pr={5} pl={2}
           >
 
-            <Text onClick={() => navigate(`/product/${product._id}`, { state: { "productId": product._id } })} fontSize={26} fontWeight={500} >{product.price} $</Text>
+            <Text onClick={() => navigate(`/product/${product._id}`, { state: { "productId": product._id } })} fontSize={26} fontWeight={500} >{product.price} ₹</Text>
             <Box display='flex' alignItems='center' margin='right' >
               {
                 inCart
                   ?
                   <>
-                    <Button onClick={onClickRemoveCart} disabled={amount === 0} colorScheme='facebook'>-</Button>
+                    <Button onClick={onClickRemoveCart} disabled={amount === 0} color='#273E47'>-</Button>
                     <Text fontSize={25} px={2} >{amount}</Text>
-                    <Button onClick={onClickAddCart} colorScheme='facebook' >+</Button>
+                    <Button onClick={onClickAddCart} color='#273E47' >+</Button>
                   </>
                   :
                   <>
@@ -146,8 +146,8 @@ const ClothesCard = ({ productId, isDelivered }) => {
                       as={Favorite}
                       fontSize={36}
                       transition={.5}
-                      color={!isFavorite ? 'blackAlpha.400' : 'facebook.500'}
-                      _hover={{ color: 'facebook.500' }}
+                      color={!isFavorite ? 'blackAlpha.400' : '#273E47.500'}
+                      _hover={{ color: '#273E47.500' }}
                     />
                     <Icon
                       onClick={onClickAddCart}
@@ -155,7 +155,7 @@ const ClothesCard = ({ productId, isDelivered }) => {
                       fontSize={36}
                       transition={.5}
                       color='blackAlpha.400'
-                      _hover={{ color: 'facebook.500' }}
+                      _hover={{ color: '#273E47.500' }}
                       ms={{ base: 2, md: 5 }}
                     />
                   </>
@@ -168,7 +168,7 @@ const ClothesCard = ({ productId, isDelivered }) => {
                   fontSize={36}
                   transition={.5}
                   color='blackAlpha.400'
-                  _hover={{ color: 'facebook.500' }}
+                  _hover={{ color: '#273E47.500' }}
                   ms={{ base: 2, md: 5 }}
                 />
               }

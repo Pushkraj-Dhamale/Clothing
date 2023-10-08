@@ -50,7 +50,7 @@ const Favorites = () => {
             variant='solid'
             fontSize={20}
             px={10} mt={10}
-            colorScheme='facebook'
+            color='#273E47'
             onClick={() => navigate('/')}>
             Start Shopping
           </Button>
@@ -74,7 +74,7 @@ const Favorites = () => {
           variant='solid'
           fontSize={20}
           px={10} mt={10}
-          colorScheme='facebook'
+          color='#273E47'
           onClick={() => navigate('/login')}>
           Login
         </Button>

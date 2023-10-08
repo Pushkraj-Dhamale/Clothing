@@ -6,6 +6,7 @@ import { Box, Button } from '@chakra-ui/react';
 import '../payment.css';
 
 import CheckoutForm from "../components/ChackoutForm";
+import ChackoutForm from "../components/ChackoutForm";
 
 
 const stripePromise = loadStripe('sk_test_51NxPlVSC9F991Uibai3IH1tJRkshsaw2Wif0e0YHqFvqJe0L9Zzs28mbtVJnMJclmfMBVMgVl91VPpfdja9IzMdl00rV4x6Pte');
@@ -13,11 +14,11 @@ const stripePromise = loadStripe('sk_test_51NxPlVSC9F991Uibai3IH1tJRkshsaw2Wif0e
  
 function StripePayment() { 
   const [product, setProduct] = useState({ 
-    name: "Go FullStack with KnowledgeHut", 
-    price: 1000, 
-    productOwner: "KnowledgeHut", 
+    name: "TrendWave", 
+    price: 1500, 
+    productOwner: "TrendWave", 
     description: 
-      "This beginner-friendly Full-Stack Web Development Course is offered online in blended learning mode, and also in an on-demand self-paced format.", 
+      "This is a payment gateway", 
     quantity: 1, 
   }); 
 
@@ -50,9 +51,9 @@ function StripePayment() {
  
   return ( 
     <>
-    <button variant="primary" onClick={makePayment}> 
+    <Button colorScheme ="blue" onClick={makePayment}> 
           Buy Now for {product.price} 
-        </button> </>
+        </Button> </>
         
        
   ); 

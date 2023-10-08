@@ -22,6 +22,16 @@ export const getProductById = async (id) => {
     }
 };
 
+export const getProduct = async () => {
+    try {
+        const { data } = await axios.get('http://localhost:4000/affiliate/');
+        return data;
+    } catch (error) {
+        console.error(`Error fetching product with ID :`, error);
+        throw error;
+    }
+};
+
 export const getProductByPrice = async (lowest, uppest) => {
     try {
         const { data } = await axios.post(`${API_BASE_URL}/query/price`, {

@@ -21,6 +21,7 @@ import ReportsforAdmin from './pages/ReportsforAdmin';
 import ImagesforAdmin from './pages/ImagesforAdmin';
 import { useUserContext } from './contexts/UserContext';
 import useGetUserRole from './hooks/useGetUserRole';
+import Affiliate from './pages/Affiliate';
 
 const App = () => {
 
@@ -39,10 +40,11 @@ const App = () => {
         <Route path='/product' element={<Product />} />
         <Route path='/product/:id' element={<Product />} />
         <Route path='/infos' element={currentUser ? <Infos /> : <Navigate to='/' />} />
-        <Route path='/orders' element={currentUser ? <Orders /> : <Navigate to='/' />} />
+        <Route path='/orders' element={ <Orders /> } />
         <Route path='/purchase' element={<Purchase />} />
         <Route path='/search' element={<Search />} />
         <Route path='/payment' element={<Payment />} />
+        <Route path='/affiliate' element={<Affiliate />} />
         {
             admin
             ?

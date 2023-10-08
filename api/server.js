@@ -14,6 +14,8 @@ const orderRoutes = require('./routes/orderRoutes');
 const reportRoutes = require('./routes/reportRoutes');
 const imageRoutes = require('./routes/imageRoutes');
 const miniImageRoutes = require('./routes/miniImageRoutes');
+const affiliate = require('./routes/affiliate');
+const Order = require('./models/Order');
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -59,6 +61,7 @@ app.post("/create-payment-intent", async (req, res) => {
 app.post("/create-checkout", async (req, res) => {
     const { product } = req.body;
     try {
+        // const add=  Order.create(req.body);
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ["card"],
             line_items: [

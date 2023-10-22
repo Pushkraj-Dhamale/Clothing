@@ -4,7 +4,7 @@ import { Box, SimpleGrid, Button, Select, Text, Icon, Heading } from '@chakra-ui
 
 import ClothesCard from '../components/ClothesCard';
 import FilterMenu from '../components/FilterMenu';
-import { getProductByCategoryId, getProductBySearch } from '../services/ProductServices';
+import { getProductByCategoryId, getProductBySearch, getAffiliateProductByCategoryId } from '../services/ProductServices';
 import { useSearchContext } from '../contexts/SearchContext';
 import { SearchOff } from '@mui/icons-material';
 
@@ -19,11 +19,21 @@ const Search = () => {
 
   useEffect(() => {
     if (state !== null) {
+      
+      if(state.categoryId=='651c3009f30ce1f185fab2ad')
+      {
+        getAffiliateProductByCategoryId(state.categoryId)
+              .then((result) => {
+                setProducts(result.products);
+              });
+      }
+     else{  
       getProductByCategoryId(state.categoryId)
         .then((result) => {
           setProducts(result.products);
         });
       setSortBy("recommended");
+     }
     }
     if (search !== "" && search !== " " && search !== null && search !== undefined && canSearch) {
       getProductBySearch(search)

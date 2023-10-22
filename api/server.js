@@ -16,6 +16,7 @@ const imageRoutes = require('./routes/imageRoutes');
 const miniImageRoutes = require('./routes/miniImageRoutes');
 const affiliate = require('./routes/affiliate');
 const Order = require('./models/Order');
+const {getAffiliateProductByCategoryId} = require('./controllers/productController');
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -39,7 +40,10 @@ app.use('/orders', orderRoutes);
 app.use('/reports', reportRoutes);
 app.use('/images', imageRoutes);
 app.use('/minis', miniImageRoutes);
-app.use('/affiliate', affiliate);
+app.get('/products/affiliate/category/:id', getAffiliateProductByCategoryId);
+
+
+// app.use('/affiliate', affiliate);
 
 // STRIPE CONNECTION
 app.post("/create-payment-intent", async (req, res) => {

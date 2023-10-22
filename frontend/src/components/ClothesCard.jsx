@@ -6,7 +6,7 @@ import { Favorite, RateReview, ShoppingCart } from '@mui/icons-material';
 
 import { useCartContext } from '../contexts/CartContext';
 import { useUserContext } from '../contexts/UserContext';
-import { getProductById } from '../services/ProductServices';
+import { getProductById, getAllProducts, getAffiliateProductById } from '../services/ProductServices';
 import { addFavorite, deleteFavorite } from '../services/UserServices';
 import useGetFavoriteStatus from '../hooks/useGetFavoriteStatus';
 import ReviewModal from './ReviewModal';
@@ -28,6 +28,20 @@ const ClothesCard = ({ productId, isDelivered }) => {
   useEffect(() => {
     if (productId) {
       setIsFavorite(status);
+      
+//        if(productId=='651c3009f30ce1f185fab2ad')
+//  {
+//  	getAffiliateProductById(productId)
+//          .then(result => {
+//            setProduct(result.product);
+//          });
+//        cart.forEach((item) => {
+//          if (item.id === productId) {
+//            setInCart(true);
+//            setAmount(item.amount);
+//          }
+//        });
+// }
       getProductById(productId)
         .then(result => {
           setProduct(result.product);

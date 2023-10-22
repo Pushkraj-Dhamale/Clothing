@@ -1,6 +1,6 @@
 const affiliate = require('../models/AffiliateProduct');
 
-exports.getAllProducts = async (req, res) => {
+exports.getAllAffiliateProduct = async (req, res) => {
     try {
         const allProducts = await affiliate.find({});
 
@@ -15,7 +15,7 @@ exports.getAllProducts = async (req, res) => {
     }
 };
 
-exports.getProductById = async (req, res) => {
+exports.getAffiliateProductById = async (req, res) => {
     try {
         const product = await affiliate.findById(req.params.id);
 
@@ -51,7 +51,7 @@ exports.getProductsByColor = async (req, res) => {
     }
 };
 
-exports.getProductsByCategoryId = async (req, res) => {
+exports.getAffiliateProductByCategoryId = async (req, res) => {
     try {
         const products = await affiliate.find({ category: req.params.id });
 

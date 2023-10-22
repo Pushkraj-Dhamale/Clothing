@@ -5,7 +5,7 @@ const {
     getAllProducts,
     getProductById,
     getProductsByStatus,
-    getProductsByCategoryId,
+    // getProductsByCategoryId,
     getProductsByColor,
     getProductsByGender,
     getProductsByPrice,
@@ -16,10 +16,10 @@ const {
     getProductsByQueries
 } = require('../controllers/affiliateController');
 
-router.route('/').get(getAllProducts);
-router.route('/query/price').post(getProductsByPrice);
-router.route('/:id').get(getProductById);
-router.route('/category/:id').get(getProductsByCategoryId);
+// router.route('/').get(getAllProducts);
+// router.route('/query/price').post(getProductsByPrice);
+// router.route('/:id').get(getProductById);
+// router.route('/category/:id').get(getProductsByCategoryId);
 router.route('/color/:color').post(getProductsByColor);
 router.route('/gender/:gender').post(getProductsByGender);
 router.route('/status/:status').get(getProductsByStatus);

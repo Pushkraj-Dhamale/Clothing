@@ -1,8 +1,24 @@
 const Product = require('../models/Product');
+const affiliate = require('../models/AffiliateProduct');
 
 exports.getAllProducts = async (req, res) => {
     try {
         const allProducts = await Product.find({});
+
+        res.status(200).json({
+            allProducts
+        });
+    } catch (error) {
+        res.status(400).json({
+            status: 'failed',
+            error
+        });
+    }
+};
+
+exports.getAllAffiliateProduct = async (req, res) => {
+    try {
+        const allProducts = await affiliate.find({});
 
         res.status(200).json({
             allProducts
@@ -21,6 +37,21 @@ exports.getProductById = async (req, res) => {
 
         res.status(200).json({
             product
+        });
+    } catch (error) {
+        res.status(400).json({
+            status: 'failed',
+            error
+        });
+    }
+};
+
+exports.getAffiliateProductByCategoryId = async (req, res) => {
+    try {
+        const products = await affiliate.find({ category: req.params.id });
+
+        res.status(200).json({
+            products
         });
     } catch (error) {
         res.status(400).json({

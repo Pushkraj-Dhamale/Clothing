@@ -21,7 +21,7 @@ import ReportsforAdmin from './pages/ReportsforAdmin';
 import ImagesforAdmin from './pages/ImagesforAdmin';
 import { useUserContext } from './contexts/UserContext';
 import useGetUserRole from './hooks/useGetUserRole';
-import Affiliate from './pages/Affiliate';
+import Affiliate from './components/Affiliate';
 
 const App = () => {
 
@@ -33,6 +33,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route exact path='/' element={<Home />} />
+        <Route path='/affiliate' element={<Affiliate />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/cart' element={<Cart />} />
@@ -44,7 +45,7 @@ const App = () => {
         <Route path='/purchase' element={<Purchase />} />
         <Route path='/search' element={<Search />} />
         <Route path='/payment' element={<Payment />} />
-        <Route path='/affiliate' element={<Affiliate />} />
+        
         {
             admin
             ?

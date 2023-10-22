@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import { Box, Text, Icon, Menu, MenuList, MenuItem, MenuButton, MenuGroup, Divider } from '@chakra-ui/react';
+import StoreIcon from '@mui/icons-material/Store';
 import { Person, Favorite, ShoppingCart, ExitToApp, ShoppingBag, Report, MapsHomeWork, Inventory, Edit } from '@mui/icons-material';
 
 import { getAllGenres } from '../services/GenreServices';
@@ -134,6 +135,20 @@ const Navbar = () => {
                   </MenuList>
                 </Menu>
             }
+          </Box>
+          <Box
+            color='#273E47.500'
+            display='flex'
+            flexDirection='column'
+            cursor='pointer'
+            mx='5'
+            alignItems='center'
+            transition={.5}
+            _hover={{ color: '#273E47.700' }}
+            onClick={() => navigate('/affiliate')}
+          >
+            <Icon fontSize={30} color='inherit' as={StoreIcon} />
+            <Text color='inherit' fontWeight={500} >AM</Text>
           </Box>
           <Box
             color='#273E47.500'

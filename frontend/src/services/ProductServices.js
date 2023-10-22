@@ -12,9 +12,39 @@ export const getAllProducts = async () => {
     }
 };
 
+export const getProducts = async () => {
+    try {
+        const { data } = await axios.get('http://localhost:4000/affiliate');
+        return data;
+    } catch (error) {
+        console.error('Error fetching all products:', error);
+        throw error;
+    }
+};
+
 export const getProductById = async (id) => {
     try {
         const { data } = await axios.get(`${API_BASE_URL}/${id}`);
+        return data;
+    } catch (error) {
+        console.error(`Error fetching product with ID ${id}:`, error);
+        throw error;
+    }
+};
+
+export const getAffiliateProductByCategoryId = async (id) => {
+    try {
+        const { data } = await axios.get(`${API_BASE_URL}/affiliate/category/${id}`);
+        return data;
+    } catch (error) {
+        console.error(`Error fetching products by category ID ${id}:`, error);
+        throw error;
+    }
+};
+
+export const getAffiliateProductById = async (id) => {
+    try {
+        const { data } = await axios.get(`${API_BASE_URL}/affiliate/${id}`);
         return data;
     } catch (error) {
         console.error(`Error fetching product with ID ${id}:`, error);

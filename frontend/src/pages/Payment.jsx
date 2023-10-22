@@ -13,9 +13,12 @@ const stripePromise = loadStripe('sk_test_51NxPlVSC9F991Uibai3IH1tJRkshsaw2Wif0e
 
  
 function StripePayment() { 
+  const location = useLocation();
+  const { price, address } = location.state; // Get the price and address from state
+  console.log(price);
   const [product, setProduct] = useState({ 
     name: "TrendWave", 
-    price: 1500, 
+    price: price, 
     productOwner: "TrendWave", 
     description: 
       "This is a payment gateway", 

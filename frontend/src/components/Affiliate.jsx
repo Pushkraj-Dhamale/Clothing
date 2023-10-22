@@ -11,7 +11,7 @@ const Affiliate = () => {
       imageUrl:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/220px-Image_created_with_a_mobile_phone.png',
       productLink: 'https://www.google.com',
-      title: 'Product 1',
+      title: 'Hoodeis wagerawagera',
       affiliateLink: 'https://www.google.com',
     },
     {

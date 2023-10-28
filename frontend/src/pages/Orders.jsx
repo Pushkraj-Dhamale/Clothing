@@ -12,23 +12,41 @@ const Orders = () => {
 
   const navigate = useNavigate();
   const { currentUser } = useUserContext();
+  const user = localStorage.getItem("currentUser");
+  console.log(user)
+  const users = user.replaceAll('"', '')
+  console.log(users)
+  // let myObjectId = String(user);
+  // let myObjectIdString = myObjectId.toString()
+  
+  // console.log(user)
+  
   const [currentOrders, setCurrentOrders] = useState("active");
   const [orders, setOrders] = useState([]);
   const [isEmpty, setIsEmpty] = useState(true);
 
   useEffect(() => {
-    getOrdersByUserId(currentUser)
-      .then((result) => {
-        var orderArray=result.orders;
-        setOrders(orderArray.sort((a, b) => (Number(a.orderDate) - Number(b.orderDate))).reverse());
-        result.orders.forEach((order) => {
-          if (currentOrders === "active" && order.status){ setIsEmpty(false)};
+    if (users) { // Ensure currentUser is not undefined
+      
+      getOrdersByUserId(users) // Make sure to use the appropriate property for user ID
+        .then((result) => {
+          console.log(result); // Log the result to check the structure of the data
+          var orderArray = result.orders || []; // Make sure to handle the case when result.orders is undefined
+          setOrders(orderArray.sort((a, b) => (Number(a.orderDate) - Number(b.orderDate))).reverse());
+          let hasActiveOrders = orderArray.some(order => order.status); // Check if any order has an active status
+          if (currentOrders === "active" && hasActiveOrders) {
+            setIsEmpty(false);
+          }
+        })
+        .catch(error => {
+          // Handle any errors with fetching orders here
+          console.error('Error fetching orders:', error);
         });
-      });
-    if (currentOrders === "all") {
-      setIsEmpty(false);
-    }      
-  }, [currentUser, currentOrders, setOrders]);
+    }
+    else{
+      console.log(currentUser._id);
+    }
+  }, [user, currentOrders]);
 
   return (
     <Box width='100%' my={10}>

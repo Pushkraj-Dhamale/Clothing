@@ -6,7 +6,7 @@ const TableProductInfo = ({ productArray }) => {
         <Td>
             {
                 productArray.map((product) => {
-                    return <Text>{product}</Text>
+                    return <Text>{product.id}</Text>
                 })
             }
         </Td>

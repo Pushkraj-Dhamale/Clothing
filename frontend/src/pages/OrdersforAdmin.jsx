@@ -19,6 +19,7 @@ const OrdersforAdmin = () => {
         .then((result) => {
           setOrders(result.orders);
         });
+        console.log()
     } else {
       getAllOrders()
         .then((result) => {
@@ -52,7 +53,7 @@ const OrdersforAdmin = () => {
                       <Td>{order._id}</Td>
                       <TableUserInfo buyerId={order.buyer} />
                       <Td>{order.address}</Td>
-                      <TableProductInfo productArray={order.products} refresh={refresh} setRefresh={setRefresh} />
+                      
                       <Td>{moment(order.orderDate).format('DD.MM.YY')}</Td>
                       <TableStatusInfo
                         prepare={order.prepare}

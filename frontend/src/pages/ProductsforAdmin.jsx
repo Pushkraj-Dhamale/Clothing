@@ -81,7 +81,7 @@ const ProductsforAdmin = () => {
                       <Td>{product.name}</Td>
                       <Td>{product.color}</Td>
                       <Td>{product.gender}</Td>
-                      <Td>{product.price} $</Td>
+                      <Td>{product.price} ₹</Td>
                       <Td>
                         <Button onClick={() => onClickEdit(product._id)} color='#273E47'><Edit /></Button>
                         <Button onClick={() => onClickDelete(product._id)} bg='whitesmoke' color='#273E47.500'><Delete /></Button>

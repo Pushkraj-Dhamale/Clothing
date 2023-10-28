@@ -12,8 +12,10 @@ const Orders = () => {
 
   const navigate = useNavigate();
   const { currentUser } = useUserContext();
-  const user = sessionStorage.getItem("currentUser");
-
+  const user = localStorage.getItem("currentUser");
+  console.log(user)
+  const users = user.replaceAll('"', '')
+  console.log(users)
   // let myObjectId = String(user);
   // let myObjectIdString = myObjectId.toString()
   
@@ -24,9 +26,9 @@ const Orders = () => {
   const [isEmpty, setIsEmpty] = useState(true);
 
   useEffect(() => {
-    if (user) { // Ensure currentUser is not undefined
+    if (users) { // Ensure currentUser is not undefined
       
-      getOrdersByUserId(user) // Make sure to use the appropriate property for user ID
+      getOrdersByUserId(users) // Make sure to use the appropriate property for user ID
         .then((result) => {
           console.log(result); // Log the result to check the structure of the data
           var orderArray = result.orders || []; // Make sure to handle the case when result.orders is undefined

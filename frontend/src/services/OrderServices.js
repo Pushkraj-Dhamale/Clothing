@@ -14,8 +14,7 @@ export const getAllOrders = async () => {
 
 export const getOrderById = async (id) => {
     try {
-        const { data } = await axios.get(`API_BASE_URL/${id}`);
-        console.log(id)
+        const { data } = await axios.get(`${API_BASE_URL}/${id}`);
         return data;
     } catch (error) {
         console.error(`Error fetching order with ID ${id}:`, error);
@@ -36,9 +35,7 @@ export const getOrdersByStatus = async (status) => {
 export const getOrdersByUserId = async (id) => {
     // console.log(id)
     try {
-        const decodedId = decodeURIComponent(id); 
-        const { data } = await axios.get(`${API_BASE_URL}/user/${decodedId}`);
-        
+        const { data } = await axios.get(`${API_BASE_URL}/user/${id}`);
         return data;
     } catch (error) {
         console.error(`Error fetching orders for user with ID ${id}:`, error);

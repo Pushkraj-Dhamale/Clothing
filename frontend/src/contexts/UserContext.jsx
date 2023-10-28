@@ -6,8 +6,8 @@ const UserContext = createContext();
 export const UserProvider = ({ children }) => {
 
     const [cookies] = useCookies(['currentUser']);
-    const [currentUser, setCurrentUser] = useState(cookies.currentUser || '');
-
+    const [currentUser, setCurrentUser] = useState(cookies.currentUser);
+    sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
     const values = {
         currentUser,
         setCurrentUser

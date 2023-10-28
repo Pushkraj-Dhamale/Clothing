@@ -18,6 +18,7 @@ const Cart = () => {
   const navigate = useNavigate();
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalAmount, setTotalAmount] = useState(0);
+  const [products, setProducts] = useState(null);
   const [userAddress, setUserAddress] = useState("");
 
   useEffect(() => {
@@ -27,11 +28,13 @@ const Cart = () => {
       if (item.price && item.amount) {
         price += item.price;
         amount += item.amount;
+        // product[item]=item.na
       }
     });
+    // setProducts(cart);
     setTotalPrice(price);
     setTotalAmount(amount);
-
+    // console.log(cart);
     currentUser && getUserById(currentUser)
       .then((result) => {
         setUserAddress(result.user.address);
@@ -42,7 +45,8 @@ const Cart = () => {
     if (currentUser) {
       if (userAddress) {
 
-        navigate('/payment',{state:{price:totalPrice,address:userAddress}});
+        navigate('/payment',{state:{products:cart,user:currentUser,price:totalPrice,address:userAddress}});
+        cookies.cart=null;
 
       } else {
         navigate('/infos');

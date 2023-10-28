@@ -20,6 +20,7 @@ const OrderCard = ({ orderId }) => {
             .then((result) => {
                 setProducts(result.order.products);
                 setDate(result.order.orderDate);
+                console.log(result.order.orderDate)
                 if (result.order.prepare) {
                     setOrderStatus("Order is preparing.");
                 } else if (result.order.onWay) {
@@ -90,13 +91,7 @@ const OrderCard = ({ orderId }) => {
                     }
                 </Box>
                 <Divider />
-                <SimpleGrid my={3} columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={3} >
-                    {
-                        products.map((product, index) => {
-                            return product !==null && <ClothesCard key={index} productId={product} isDelivered={orderStatus === "Order has been delivered."} />
-                        })
-                    }
-                </SimpleGrid>
+                
             </Box>
             <ReportModal onClose={onClose} isOpen={isOpen} orderId={orderId} />
         </>

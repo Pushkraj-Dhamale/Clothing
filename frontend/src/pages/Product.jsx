@@ -134,17 +134,9 @@ const Product = () => {
   };
 
   const onClickWrite = () => {
-    if (have) {
+    if (!have) {
       onOpen(true);
-    } else {
-      toast({
-        title: 'Error!',
-        description: 'You must have this to write a review.',
-        status: 'error',
-        duration: 2000,
-        isClosable: true
-      });
-    }
+    } 
   };
 
   return (

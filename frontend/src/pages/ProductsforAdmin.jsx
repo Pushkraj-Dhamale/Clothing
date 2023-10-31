@@ -68,7 +68,7 @@ const ProductsforAdmin = () => {
                 <Th>Color</Th>
                 <Th>Gender</Th>
                 <Th>Price</Th>
-                <Th><Button color='#273E47' onClick={onClickAdd} >Add New</Button></Th>
+                <Th>Action</Th>
               </Tr>
             </Thead>
             <Tbody>

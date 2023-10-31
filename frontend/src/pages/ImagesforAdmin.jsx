@@ -77,7 +77,7 @@ const ImagesforAdmin = () => {
     <Box>
       <Box display='flex' justifyContent='space-between' my={5} px={6} >
         <Text fontSize={30} fontWeight={500} color='#273E47.500'>Admin Image Panel</Text>
-        <Button color='#273E47' onClick={onOpen} >Add Image</Button>
+        {/* <Button color='#273E47' onClick={onOpen} >Add Image</Button> */}
       </Box>
       <Divider></Divider>
       <Box my={5} p={3}>
